@@ -1,4 +1,4 @@
-# 🌿 Aquaponics IoT System - Complete Guide
+# 🌿 Aquaponics IoT System
 
 A step-by-step explanation of how the entire system works, from sensors to mobile app.
 
