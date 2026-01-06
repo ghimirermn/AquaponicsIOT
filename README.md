@@ -7,7 +7,7 @@ A step-by-step explanation of how the entire system works, from sensors to mobil
 ## System Overview
 
 ```
-┌─────────────────┐     MQTT      ┌─────────────────┐      HTTP      ┌─────────────────┐
+┌─────────────────┐     MQTT     ┌─────────────────┐      HTTP      ┌─────────────────┐
 │  Raspberry Pi   │ ───────────► │   Windows PC    │ ◄────────────► │   Android App   │
 │                 │    :1883     │                 │     :8000      │                 │
 │ • Sensors       │ ◄─────────── │ • MQTT Broker   │                │ • View data     │
@@ -191,7 +191,6 @@ log_to_csv(reading)  # Appends each reading
 ### Running it
 
 ```bash
-cd d:\IoT
 .\venv\Scripts\activate
 python api_server.py
 # Server runs on http://0.0.0.0:8000
@@ -213,21 +212,21 @@ python api_server.py
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                     MainActivity                         │
+│                     MainActivity                        │
 ├─────────────────────────────────────────────────────────┤
-│  onCreate()                                              │
+│  onCreate()                                             │
 │    ├── Initialize views (TextViews, Buttons)            │
 │    ├── Setup click listeners                            │
 │    ├── Fetch initial data                               │
 │    └── Start auto-refresh timer (5s)                    │
-│                                                          │
-│  fetchSensorData()                                       │
+│                                                         │
+│  fetchSensorData()                                      │
 │    └── HTTP GET /latest → updateUI()                    │
-│                                                          │
-│  sendControlCommand()                                    │
+│                                                         │
+│  sendControlCommand()                                   │
 │    └── HTTP POST /control/pump?state=toggle             │
-│                                                          │
-│  updateUI()                                              │
+│                                                         │
+│  updateUI()                                             │
 │    └── Update TextViews with sensor values              │
 │    └── Change colors based on diagnosis                 │
 └─────────────────────────────────────────────────────────┘
@@ -290,7 +289,6 @@ private static final String API_BASE_URL = "http://YOUR_PC_IP:8000";
 net start mosquitto
 
 # Step 2: Start API Server (Windows)
-cd d:\IoT
 .\venv\Scripts\activate
 python api_server.py
 
@@ -325,7 +323,7 @@ python rpi_sensor_simulator.py --broker localhost
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
-│                           COMPLETE DATA FLOW                              │
+│                           COMPLETE DATA FLOW                             │
 ├──────────────────────────────────────────────────────────────────────────┤
 │                                                                          │
 │  1. SENSOR DATA (every 5 seconds)                                        │
@@ -357,4 +355,4 @@ python rpi_sensor_simulator.py --broker localhost
 
 ---
 
-*Guide last updated: January 5, 2026*
+*last updated: January 6, 2026*
