@@ -191,7 +191,7 @@ log_to_csv(reading)  # Appends each reading
 ### Running it
 
 ```bash
-cd d:\solo-works\IoT
+cd d:\IoT
 .\venv\Scripts\activate
 python api_server.py
 # Server runs on http://0.0.0.0:8000
@@ -290,7 +290,7 @@ private static final String API_BASE_URL = "http://YOUR_PC_IP:8000";
 net start mosquitto
 
 # Step 2: Start API Server (Windows)
-cd d:\solo-works\IoT
+cd d:\IoT
 .\venv\Scripts\activate
 python api_server.py
 
